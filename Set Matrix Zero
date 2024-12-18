@@ -1,0 +1,27 @@
+class Solution:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
+        
+        row=len(matrix)
+        column=len(matrix[0])
+     
+        vis=0
+        if column==1:
+            for i in range(row):
+                if matrix[i][0]==0:
+                    vis=1
+                    break
+            if vis==1:
+                for i in range(row):
+                    matrix[i][0]=0
+        l=[]
+        for i in range(0,row):
+            for j in range(0,column):
+                if matrix[i][j]==0:
+                    l.append([i,j])
+        print(l)
+        for i in range(0,len(l)):
+            matrix[l[i][0]]=[0]*column
+            j=0
+            while j<row:
+                matrix[j][l[i][1]]=0
+                j=j+1
