@@ -1,0 +1,17 @@
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        res=[]
+        def sub( p, up):
+            if len(up)==0:
+                res.append(p)
+                return 
+            
+            s=up[0]
+
+            sub(p+[up[0]],up[1:])
+            sub(p,up[1:])
+        
+        sub([],nums)
+        return res
+
+        
