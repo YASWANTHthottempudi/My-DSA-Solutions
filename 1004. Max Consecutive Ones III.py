@@ -1,4 +1,5 @@
 class Solution:
+    #Sliding window
     def longestOnes(self, nums: List[int], k: int) -> int:
         left=0
         right=0
